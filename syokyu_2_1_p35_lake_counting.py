@@ -1,4 +1,4 @@
-# 幅優先探索での実装
+# 深さ優先探索での実装
 from collections import deque
 
 N = 10
@@ -32,7 +32,7 @@ for i in range(1, N + 1):
 
             q = deque([[i, j]])
             while q:
-                y, x = q.popleft()
+                y, x = q.pop() #　popleft()にすれば幅優先探索になる
 
                 #8近傍
                 directions = [[1, 0], [0, 1], [-1, 0], [0, -1], [-1, 1], [1, -1], [-1, -1], [1, 1]]
