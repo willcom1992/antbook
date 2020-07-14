@@ -1,3 +1,4 @@
+# 幅優先探索での実装
 from collections import deque
 
 N = 10
@@ -40,7 +41,7 @@ for i in range(1, N + 1):
                     if lake[y + d[0]][x + d[1]] == 'w':
                         lake[y + d[0]][x + d[1]] = '.'
                         q.append([y + d[0], x + d[1]])
-                        
+
             cnt += 1
 
 print(cnt)
