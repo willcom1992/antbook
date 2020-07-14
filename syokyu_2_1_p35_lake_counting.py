@@ -30,9 +30,9 @@ for i in range(1, N + 1):
         if lake[i][j] == 'w':
             lake[i][j] = '.'
 
-            q = deque([[i, j]])
-            while q:
-                y, x = q.pop() #　popleft()にすれば幅優先探索になる
+            stack = deque([[i, j]])
+            while stack:
+                y, x = stack.pop() #　popleft()にすれば幅優先探索になる
 
                 #8近傍
                 directions = [[1, 0], [0, 1], [-1, 0], [0, -1], [-1, 1], [1, -1], [-1, -1], [1, 1]]
@@ -40,7 +40,7 @@ for i in range(1, N + 1):
                 for d in directions:
                     if lake[y + d[0]][x + d[1]] == 'w':
                         lake[y + d[0]][x + d[1]] = '.'
-                        q.append([y + d[0], x + d[1]])
+                        stack.append([y + d[0], x + d[1]])
 
             cnt += 1
 
