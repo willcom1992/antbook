@@ -1,7 +1,7 @@
 import bisect
-n = 7
+n = 5
 r = 10
-x = [1,10,15,20,30,35,60]
+x = [1,7,15,20,30,50]
 # 昇順
 x.sort()
 
@@ -16,12 +16,12 @@ while True:
     # 次に打つべき数字のインデックスを取得
     idx = bisect.bisect_right(x,x[idx+1] + r)
 
+    # リストの範囲外なら終了
     if idx <= n-1:
         now = x[idx]
-        print(now)
+        cnt += 1
     else:
         cnt += 1
         break
-    cnt += 1
 
 print(cnt)
