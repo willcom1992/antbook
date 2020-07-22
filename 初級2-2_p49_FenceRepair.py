@@ -1,6 +1,7 @@
 import heapq
 N = 3
 L = [8, 5, 8]
+
 # 優先度付きキュー
 heapq.heapify(L)
 
@@ -16,4 +17,5 @@ while len(L) > 1:
     heapq.heappush(L, x + y)
 
 print(ans)
+
 
